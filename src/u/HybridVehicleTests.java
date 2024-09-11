@@ -13,32 +13,35 @@ public class HybridVehicleTests {
 
     @Before
     public void setUp() {
-        hybrid = new HybridVehicle(15.0, 50.0); 
+
+        hybrid = new HybridVehicle(20.0, 60.0); 
     }
 
     @Test
     public void testFuelCost() {
-        double pricePerGallon = 3.5;
-        double gallons = 10.0;
-        double expectedCost = 35.0;
+        double pricePerGallon = 4.0;
+        double gallons = 15.0;
+        double expectedCost = 60.0;
         assertEquals(expectedCost, hybrid.fuelCost(pricePerGallon, gallons), 0.0001);
     }
 
     @Test
     public void testChargeCost() {
-        double pricePerKWh = 0.15;
-        double kWh = 40.0;
-        double expectedCost = 6.0;
+        // New test case values
+        double pricePerKWh = 0.20;
+        double kWh = 50.0;
+        double expectedCost = 10.0;
         assertEquals(expectedCost, hybrid.chargeCost(pricePerKWh, kWh), 0.0001);
     }
 
     @Test
     public void testTotalCost() {
-        double pricePerGallon = 3.5;
-        double gallons = 10.0;
-        double pricePerKWh = 0.15;
-        double kWh = 40.0;
-        double expectedCost = 41.0;
+        // New test case values
+        double pricePerGallon = 4.0;
+        double gallons = 15.0;
+        double pricePerKWh = 0.20;
+        double kWh = 50.0;
+        double expectedCost = 70.0;
         assertEquals(expectedCost, hybrid.totalCost(pricePerGallon, gallons, pricePerKWh, kWh), 0.0001);
     }
 }
